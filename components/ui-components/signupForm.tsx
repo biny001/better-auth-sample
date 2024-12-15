@@ -118,9 +118,9 @@ export function SignUpForm() {
           >
             signUp
           </Button>
-          <Button disabled={loading} variant="outline" className="w-full">
+          {/* <Button disabled={loading} variant="outline" className="w-full">
             signUp with Google
-          </Button>
+          </Button> */}
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
