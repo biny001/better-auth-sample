@@ -39,6 +39,16 @@ export function SignUpForm() {
             console.log(ctx);
           },
           onSuccess: () => {
+            async function createStellarAccount() {
+              const res = await fetch("/api/createAccount", { method: "PUT" });
+              if (!res.ok) {
+                throw new Error("Failed to create stellar account");
+              }
+              const data = await res.json();
+              return data;
+            }
+            const newAccount = createStellarAccount();
+            console.log(newAccount);
             navigate.push("/");
             console.log("account created successfully");
           },

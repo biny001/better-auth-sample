@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
@@ -23,6 +24,7 @@ export function LoginForm() {
 
   const Login = async () => {
     try {
+      setloading(true);
       const { data, error } = await authClient.signIn.email(
         {
           email,
@@ -34,7 +36,6 @@ export function LoginForm() {
           },
           onSuccess: () => {
             navigate.push("/");
-            console.log("logged in successfully");
           },
           onError: (ctx) => {
             alert(ctx.error.message);
